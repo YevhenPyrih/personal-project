@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-background-color: #c6cfac;
+  --primary-accent-color: #325956;
+  --header-button-accent-color: #f1e6e1;
+  --secondary-accent-color: rgba(87, 114, 112, 0.92);
+  --hero-description-color: #668280;
+
+  --trust-background-color: #f1ded1;
+  --trust-primary-highlight-color: #DB9B3C;
+  --trust-secondary-highlight-color: rgba(193,139,59,0.64);
+}

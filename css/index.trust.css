@@ -1,0 +1,51 @@
+.main__trust {
+  background-color: var(--trust-background-color);
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px 0;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  padding: 60px 0;
+
+  .trust__headline {
+    display: inline-block;
+    max-width: 570px;
+    padding: 0 15px;
+    .trust__headline-text {
+      font:
+        32px istok web,
+        sans-serif;
+      color: var(--trust-secondary-highlight-color);
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+  .trust__stat {
+    display: inline-block;
+    max-width: 200px;
+    width: 100%;
+    padding: 0 15px;
+    .trust__stat-value {
+      font:
+        48px istok web,
+        sans-serif;
+      color: var(--trust-primary-highlight-color);
+      font-weight: bold;
+      margin: 0;
+    }
+    .trust__stat-label {
+      font:
+        18px istok web,
+        sans-serif;
+      color: var(--trust-secondary-highlight-color);
+      margin: 0;
+    }
+  }
+}
