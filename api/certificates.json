@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Cruelty Free Certificate",
+    "src": "img/cruelty.svg",
+    "id": 0
+  },
+  {
+    "name": "Ingredients Certificate",
+    "src": "img/ingredients.svg",
+    "id": 1
+  },
+  {
+    "name": "Quality Certificate",
+    "src": "img/quality.svg",
+    "id": 2
+  }
+]

@@ -1,34 +1,115 @@
 <!-- index.certificates.partial.html -->
-<div>
-  <div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="..." />
+<div class="main__certificates">
+  <div class="certificates__info">
+    <h2 class="certificates__title">Certificates</h2>
+    <p class="certificates__subtitle">
+      Our organic cosmetics are certified in both the USA and Europe.
+    </p>
+    <p class="certificates__description">
+      Our products are free from synthetic chemicals and fragrances, and are
+      made with only the finest organic ingredients.
+    </p>
+  </div>
+  <div class="certificates__carousel-wrapper">
+    <div class="certificates__carousel">
+      <!-- <button></button> -->
+
+      <div class="carousel__image-wrapper">
+        <img
+          class="certificates__carousel-img-hidden-left"
+          src=""
+          alt=""
+          width="391"
+        />
+        <img
+          class="certificates__carousel-img-left"
+          src=""
+          alt=""
+          width="391"
+        />
+
+        <img
+          class="certificates__carousel-img-right"
+          src=""
+          alt=""
+          width="391"
+        />
+
+        <img
+          class="certificates__carousel-img-hidden-right"
+          src=""
+          alt=""
+          width="391"
+        />
       </div>
     </div>
+
     <button
-      class="carousel-control-prev"
       type="button"
-      data-bs-target="#carouselExample"
-      data-bs-slide="prev"
+      class="certificates__carousel-left-arrow certificates__carousel-arrow--prev"
+      style="
+        width: 32px;
+        height: 32px;
+        background-color: #4c6a62;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0;
+      "
     >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
+      <div class="certificates__carousel-arrow-click-zone"></div>
+      <svg
+        class="certificates__carousel-arrow-svg"
+        viewBox="0 0 30 30"
+        style="
+          width: 28px;
+          height: 28px;
+          fill: #d4d7d1;
+          transform: rotate(180deg);
+        "
+      >
+        <defs>
+          <path
+            d="M19.533 15l-9.1-9.45c-.577-.6-.577-1.5 0-2.1.578-.6 1.445-.6 2.023 0l10.11 10.5c.29.3.434.75.434 1.05 0 .45-.144.75-.433 1.05l-10.111 10.5c-.29.3-.578.45-1.012.45-.433 0-.722-.15-1.01-.45-.578-.6-.578-1.5 0-2.1l9.1-9.45z"
+            id="a-1772107439179"
+          ></path>
+        </defs>
+        <use fill-rule="nonzero" xlink:href="#a-1772107439179"></use>
+      </svg>
     </button>
     <button
-      class="carousel-control-next"
       type="button"
-      data-bs-target="#carouselExample"
-      data-bs-slide="next"
+      class="certificates__carousel-right-arrow certificates__carousel-arrow--next"
+      style="
+        width: 32px;
+        height: 32px;
+        background-color: #4c6a62;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0;
+      "
     >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
+      <div class="certificates__carousel-arrow-click-zone"></div>
+      <svg
+        class="certificates__carousel-arrow-svg"
+        viewBox="0 0 30 30"
+        style="width: 28px; height: 28px; fill: #d4d7d1"
+      >
+        <defs>
+          <path
+            d="M19.533 15l-9.1-9.45c-.577-.6-.577-1.5 0-2.1.578-.6 1.445-.6 2.023 0l10.11 10.5c.29.3.434.75.434 1.05 0 .45-.144.75-.433 1.05l-10.111 10.5c-.29.3-.578.45-1.012.45-.433 0-.722-.15-1.01-.45-.578-.6-.578-1.5 0-2.1l9.1-9.45z"
+            id="a-1772107439179"
+          ></path>
+        </defs>
+        <use fill-rule="nonzero" xlink:href="#a-1772107439179"></use>
+      </svg>
     </button>
   </div>
 </div>
