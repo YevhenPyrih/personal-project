@@ -1,0 +1,63 @@
+.main__promo {
+  background-color: var(--ingredients-background-color);
+  .promo__strip {
+    background-color: var(--promo-strip-color);
+    padding: 10px 0;
+    .promo__strip-text {
+      color: var(--ingredients-secondary-accent-color);
+      font:
+        19px Chivo,
+        sans-serif;
+      font-weight: 750;
+      text-decoration: underline;
+      gap: 10px;
+    }
+    text-align: center;
+  }
+  .promo__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 60px 0;
+
+    .promo__content-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 15px;
+      .promo__title {
+        font:
+          32px istok web,
+          sans-serif;
+        font-weight: 500;
+        color: var(--ingredients-primary-accent-color);
+        align-items: center;
+        max-width: 370px;
+        margin: 0;
+        .promo__price {
+          font-weight: 700;
+        }
+      }
+      .promo__description {
+        font:
+          19px Chivo,
+          sans-serif;
+        color: var(--ingredients-secondary-accent-color);
+        max-width: 570px;
+        margin: 0;
+      }
+      .promo__button {
+        background-color: var(--ingredients-primary-accent-color);
+        color: var(--header-button-accent-color);
+        max-width: 165px;
+        width: 165px;
+        height: 47px;
+        margin: 0;
+        font:
+          14px chivo,
+          sans-serif;
+        font-weight: bold;
+      }
+    }
+  }
+}

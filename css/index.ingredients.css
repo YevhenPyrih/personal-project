@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
 
+  justify-content: space-between;
   overflow: hidden;
 
   gap: 20px 0;
@@ -19,14 +20,21 @@
     .ingredients__image {
       width: 100%;
       height: auto;
+
+      @media (max-width: 1439px) {
+        width: calc(50vw + (1440px - 100vw));
+      }
     }
   }
 
   .ingredients__content-wrapper {
-    width: 50%;
+    max-width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 120px 0 125px;
+    background-color: var(--ingredients-background-color);
     .ingredients__content {
       display: flex;
       flex-direction: column;

@@ -1,7 +1,7 @@
 
 
 function init() {
-    
+    import('./index.certificates.js');
 }
 
 const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;

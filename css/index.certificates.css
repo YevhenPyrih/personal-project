@@ -1,7 +1,7 @@
 .main__certificates {
   background-color: var(--primary-background-color);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
@@ -35,3 +35,43 @@
   }
 }
 
+
+/* 1. Add padding to the main wrapper so the arrows have an empty place to sit */
+.splide {
+  padding: 0 60px; /* Adjust 60px as needed to give the arrows enough room */
+
+  width: 800px;
+}
+
+/* 2. The darker background goes on the container BEHIND the slider */
+/* (Assuming you wrapped your splide in a section or div) */
+
+
+/* 1. Lock down the slide container */
+.splide__slide {
+  padding: 0px; 
+  box-sizing: border-box; 
+  max-width: 100%; /* CRITICAL: Stops the flex item from expanding infinitely */
+}
+
+/* 2. Lock down the SVGs themselves */
+.splide__slide img {
+  width: 100%;
+  max-width: 100%; /* CRITICAL: The magic bullet for stubborn SVGs */
+  height: auto;
+  display: block;
+  object-fit: contain; /* Ensures the whole certificate stays visible */
+}
+
+.splide__arrow svg {
+  width: 24px;  /* Adjust this based on how big you want your custom icon */
+  height: 24px;
+}
+
+/* Optional: If your custom SVG is a bit off-center, use flexbox on the button to perfectly center it */
+.splide__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
