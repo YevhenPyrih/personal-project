@@ -1,6 +1,6 @@
 
+
 async function init() {
-    // Динамічний імпорт потребує відносного шляху з ./
     await import('./index.certificates.js');
 }
 
