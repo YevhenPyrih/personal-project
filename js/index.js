@@ -2,6 +2,7 @@
 
 function init() {
     import('./index.certificates.js');
+    import('./index.testimonial.js');
 }
 
 const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;

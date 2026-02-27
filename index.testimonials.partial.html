@@ -1,36 +1,75 @@
 <!-- index.testimonials.partial.html -->
 
-<div>
-  <div></div>
-  <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="..." />
-      </div>
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselTestimonials"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselTestimonials"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<div class="main__testimonials">
+  <div class="testimonials__header">
+    <h2 class="testimonials__title">Happy Clients</h2>
+    <p class="testimonials__subtitle">Read our clients' testimonials below</p>
   </div>
+  <section
+    class="testimonials__carousel splide splide--testimonials"
+    aria-label="Splide Basic HTML Example"
+  >
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <div class="testimonial">
+            <div class="testimonial__photo-container">
+              <img
+                src="img/Lucy-Adams.jpg"
+                alt="Lucy Adams"
+                class="testimonial__photo"
+              />
+            </div>
+            <h3 class="testimonial__name">Lucy Adams</h3>
+            <p class="testimonial__text">
+              “I've been using this box of organic cosmetics for a few weeks now
+              and I'm absolutely loving the results. My skin is noticeably
+              brighter and smoother and I'm so happy I made the switch to more
+              natural products. Plus, it smells great too!”
+            </p>
+            <p class="testimonial__date">December 22, 2024</p>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="testimonial">
+            <div class="testimonial__photo-container">
+              <img
+                src="img/Susan-Peterson.jpg"
+                alt="Susan Peterson"
+                class="testimonial__photo"
+              />
+            </div>
+            <h3 class="testimonial__name">Susan Peterson</h3>
+            <p class="testimonial__text">
+              “I LOVE this set of organic cosmetics! I personally felt that the
+              products worked better on my skin than any other products I've
+              tried in the past. My skin feels softer and more nourished and
+              it's also helped improve my overall complexion. Definitely worth a
+              shot!”
+            </p>
+            <p class="testimonial__date">March 15, 2024</p>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="testimonial">
+            <div class="testimonial__photo-container">
+              <img
+                src="img/Amanda-Stal.webp"
+                alt="Amanda Stal"
+                class="testimonial__photo"
+              />
+            </div>
+            <h3 class="testimonial__name">Amanda Stal</h3>
+            <p class="testimonial__text">
+              “I had the pleasure of using Shine products and it worked wonders
+              on my skin. I felt as though my pores were deeply cleansed and my
+              skin had a healthy look afterwards. Would definitely suggest this
+              to anyone looking for a natural solution to their skincare needs!”
+            </p>
+            <p class="testimonial__date">May 02, 2024</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
 </div>

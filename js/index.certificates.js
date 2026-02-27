@@ -1,5 +1,5 @@
 function render() {
-  new Splide( '.splide', {
+  new Splide( '.splide--certificates', {
     type   : 'loop',     // Нескінченна прокрутка
     perPage: 2,          // Показувати 2 елементи
     perMove: 1,          // ГОРТАТИ ПО 1 ЕЛЕМЕНТУ (те, що ви шукали!)
