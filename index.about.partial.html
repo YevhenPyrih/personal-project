@@ -1,43 +1,100 @@
-<div>
-  <div>
-    <div></div>
-    <div></div>
-  </div>
-  <div></div>
-  <div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div id="carouselAbout" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="..." />
+<div class="main__about">
+  <div class="about__header">
+    <div class="about__hero">
+      <div class="about__headline">
+        <h2 class="about__title">
+          Revitalize Your Skin with Our Nourishing and Hydrating Skincare Box
+        </h2>
       </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="..." />
+      <div class="about__intro">
+        <div class="about__intro-content">
+          <svg
+            class="about__intro-image"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 100 100"
+            width="50"
+            height="50"
+            fill="var(--primary-background-color)"
+          >
+            <path
+              d="M48.87 42.353c0-11.276-9.14-20.417-20.417-20.417-11.277 0-19.462 8.826-20.417 20.062-1.458 17.145 11.567 31.5 27.38 36.067-5.39-3.259-9.15-8.927-9.777-15.519.923.131 1.857.224 2.814.224C39.73 62.77 48.87 53.63 48.87 42.353zM92 42.353c0-11.276-9.14-20.417-20.418-20.417-11.276 0-19.462 8.826-20.418 20.062-1.458 17.145 11.567 31.5 27.381 36.067-5.39-3.259-9.149-8.927-9.777-15.519.923.131 1.858.224 2.814.224C82.86 62.77 92 53.63 92 42.353z"
+            />
+          </svg>
+          <p class="about__intro-text">
+            By taking care of your skin every day, you can invest in your future
+            and ensure that your skin will remain healthy and youthful for years
+            to come.
+          </p>
+        </div>
+        <div class="about__signature-container">
+          <span class="about__signature">- YOUR SHINE PROFESSIONAL</span>
+        </div>
       </div>
     </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselAbout"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselAbout"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+
+    <div class="about__divider">
+      <img class="about__divider-graphic" src="" alt="" />
+    </div>
+
+    <div class="about__content">
+      <div class="about__content-item">
+        <div class="about__content-image">
+          <img src="img/rabbit.svg" alt="Rabbit icon" />
+        </div>
+        <div class="about__content-body">
+          <h3 class="about__content-title">EVERYDAY SKINCARE</h3>
+          <p class="about__content-text">
+            Our cosmetics are suitable for women with any skin type.
+          </p>
+        </div>
+      </div>
+      <div class="about__content-item">
+        <div class="about__content-image">
+          <img src="img/leaf.svg" alt="Leaf icon" />
+        </div>
+        <div class="about__content-body">
+          <h3 class="about__content-title">ORGANIC INGREDIENTS</h3>
+          <p class="about__content-text">
+            We use only natural ingredients. Our products are cruelty-free.
+          </p>
+        </div>
+      </div>
+      <div class="about__content-item">
+        <div class="about__content-image">
+          <img src="img/droplet.svg" alt="Droplet icon" />
+        </div>
+        <div class="about__content-body">
+          <h3 class="about__content-title">SKIN HYDRATION</h3>
+          <p class="about__content-text">
+            Fill your skin with moisture and radiance with our products.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <section
+    class="about__carousel splide splide--about"
+    aria-label="Product gallery"
+  >
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <div class="about__carousel-slide sea"></div>
+        </li>
+        <li class="splide__slide">
+          <div class="about__carousel-slide girl"></div>
+        </li>
+        <li class="splide__slide">
+          <div class="about__carousel-slide puddle"></div>
+        </li>
+        <li class="splide__slide">
+          <div class="about__carousel-slide hands"></div>
+        </li>
+        <li class="splide__slide">
+          <div class="about__carousel-slide leaf"></div>
+        </li>
+      </ul>
+    </div>
+  </section>
 </div>

@@ -1,0 +1,176 @@
+.main__about {
+  background-color: var(--primary-accent-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .about__header,
+  .about__carousel {
+    max-width: 1200px;
+    padding: 0 32px;
+  }
+
+  .about__header {
+    padding: 120px 0 25px;
+
+    .about__hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      .about__headline {
+        max-width: 555px;
+
+        .about__title {
+          font:
+            48px istok web,
+            sans-serif;
+          color: var(--primary-background-color);
+        }
+      }
+
+      .about__intro {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .about__intro-content {
+          display: flex;
+          flex-direction: row;
+          max-width: 570px;
+
+          .about__intro-image {
+            width: 50px !important;
+            height: 50px;
+            aspect-ratio: 1/1;
+            margin: 15px;
+          }
+
+          .about__intro-text {
+            font:
+              17px chivo,
+              sans-serif;
+            font-style: italic;
+            color: var(--about-secondary-text-color);
+            max-width: 520px;
+          }
+        }
+
+        .about__signature-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+
+          .about__signature {
+            font:
+              12px istok web,
+              sans-serif;
+            color: var(--about-primary-accent-color);
+          }
+        }
+      }
+    }
+
+    .about__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 70px;
+      gap: 20px;
+
+      .about__content-item {
+        display: flex;
+        flex-direction: row;
+
+        .about__content-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 70px;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: var(--primary-background-color);
+          img {
+            width: 69%;
+            height: auto;
+          }
+        }
+        .about__content-body {
+          max-width: 295px;
+          padding: 0 7.5px;
+
+          .about__content-title {
+            font:
+              12px istok web,
+              sans-serif;
+            color: var(--about-primary-accent-color);
+          }
+
+          .about__content-text {
+            font:
+              17px chivo,
+              sans-serif;
+            color: var(--about-secondary-text-color);
+          }
+        }
+      }
+    }
+  }
+
+  .about__carousel {
+    padding: 30px 0;
+    width: 100%;
+
+    .splide__arrow--prev {
+      transform: translateX(-30px) translateY(-20px);
+    }
+    .splide__arrow--next {
+      transform: translateX(50px) translateY(-20px);
+    }
+    .splide__track {
+      padding: 0 15px;
+      .splide__slide {
+        .about__carousel-slide {
+          display: block;
+          overflow: hidden;
+          aspect-ratio: 360/348;
+        }
+
+        .sea {
+          background-image: url(../img/product-sea.webp);
+          background-size: cover;
+          background-position: top;
+          background-repeat: no-repeat;
+        }
+        .girl {
+          background-image: url(../img/girl-cream.webp);
+          background-size: cover;
+          background-position: top;
+          background-repeat: no-repeat;
+        }
+        .puddle {
+          background-image: url(../img/product-puddle.webp);
+          background-size: cover;
+          background-position: top;
+          background-repeat: no-repeat;
+        }
+        .hands {
+          background-image: url(../img/hands-cream.webp);
+          background-size: cover;
+          background-position: top;
+          background-repeat: no-repeat;
+        }
+        .leaf {
+          background-image: url(../img/product-leaf.webp);
+          background-size: cover;
+          background-position: top;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
