@@ -1,0 +1,91 @@
+.main__ingredients {
+  display: flex;
+  flex-direction: row;
+
+  overflow: hidden;
+
+  gap: 20px 0;
+
+  background-color: var(--ingredients-background-color);
+
+  width: 100%;
+  max-height: 712.8px;
+
+  .ingredients__image-wrapper {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ingredients__image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .ingredients__content-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 120px 0 125px;
+    .ingredients__content {
+      display: flex;
+      flex-direction: column;
+      max-width: 570px;
+      gap: 25px;
+
+      .ingredients__title {
+        font:
+          48px istok web,
+          sans-serif;
+        color: var(--ingredients-primary-accent-color);
+        margin: 0;
+      }
+      .ingredients__subtitle {
+        font:
+          19px chivo,
+          sans-serif;
+        margin: 0;
+        color: var(--ingredients-secondary-accent-color);
+      }
+      .ingredients__list {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding-left: 0;
+        font:
+          14px chivo,
+          sans-serif;
+        color: var(--ingredients-primary-accent-color);
+        font-weight: bold;
+        gap: 10px;
+        margin: 0;
+        .ingredients__list-item {
+          background-image: url(../img/ingredients-list-style.svg);
+          background-repeat: no-repeat;
+          background-size: 20px 24px; /* Adjust these values */
+          background-position: 0 center;
+          padding-left: 36px; /* Space for the image */
+        }
+      }
+
+      .ingredients__description {
+        font:
+          17px chivo,
+          sans-serif;
+        color: var(--ingredients-description-color);
+        margin: 0;
+      }
+
+      .ingredients__button {
+        background-color: var(--ingredients-primary-accent-color);
+        color: var(--header-button-accent-color);
+        max-width: 161.99px;
+        width: 161.99px;
+        height: 46.8px;
+        font:
+          14px chivo,
+          sans-serif;
+      }
+    }
+  }
+}

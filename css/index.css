@@ -1,9 +1,11 @@
 @import url("global.css");
+@import url("components.css");
 @import url("global.header__nav.css");
 @import url("index.header__hero.css");
 
 
 @import url("index.trust.css");
+@import url("index.ingredients.css");
 
 
 @import url("index.certificates.css");

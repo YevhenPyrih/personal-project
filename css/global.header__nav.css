@@ -28,18 +28,12 @@
 }
 
 .nav__button{
+    background-color: var(--primary-accent-color);
+    color: var(--header-button-accent-color);
     max-width: 194.82px; 
     width: 194.82px;
     height: 46.8px;
-    border: none;
-    background-color: var(--primary-accent-color);
-    align-items: center;
-    justify-content: center;
-    display: inline-block;
-    color: var(--header-button-accent-color);
-    border-radius: 5px;
     font: 14px chivo, sans-serif;
-    font-weight: bold;
 }
 
 .nav__menu{

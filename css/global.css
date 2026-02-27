@@ -17,4 +17,9 @@
   --trust-background-color: #f1ded1;
   --trust-primary-highlight-color: #DB9B3C;
   --trust-secondary-highlight-color: rgba(193,139,59,0.64);
+
+  --ingredients-background-color: #edc8e5;
+  --ingredients-primary-accent-color: #7d318a;
+  --ingredients-secondary-accent-color: #7d318aa3;
+  --ingredients-description-color: #3716466e;
 }
