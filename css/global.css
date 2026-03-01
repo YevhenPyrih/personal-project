@@ -15,8 +15,8 @@
   --hero-description-color: #668280;
 
   --trust-background-color: #f1ded1;
-  --trust-primary-highlight-color: #DB9B3C;
-  --trust-secondary-highlight-color: rgba(193,139,59,0.64);
+  --trust-primary-highlight-color: #db9b3c;
+  --trust-secondary-highlight-color: rgba(193, 139, 59, 0.64);
 
   --ingredients-background-color: #edc8e5;
   --ingredients-primary-accent-color: #7d318a;
@@ -27,4 +27,39 @@
 
   --about-secondary-text-color: #cdd5b3b3;
   --about-primary-accent-color: #c8d1af;
+
+  --benefits-background-color: #f6f2d3;
+  --benefits-secondary-background-color: #9b8f2230;
+  --benefits-primary-accent-color: #a39135;
+  --benefits-secondary-accent-color: #9b8f33b8;
+  --benefits-description-color: #9b8f22ad;
+  
+  --footer-divider-color: #aab99d;
+}
+
+.nav__logo{
+    width: 105.73px;
+    height: 49.59px;
+}
+
+.outlined_2wD {
+  .border_2yy,
+  .logo_2gS {
+    fill: var(--primary-accent-color);
+  }
+
+  .outer_bDW {
+    fill: transparent;
+  }
+}
+
+.outlined_2wD:hover {
+  .border_2yy,
+  .logo_2gS {
+    fill: transparent;
+  }
+
+  .outer_bDW {
+    fill: var(--primary-accent-color);
+  }
 }

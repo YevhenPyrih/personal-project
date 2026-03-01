@@ -1,71 +1,81 @@
-.hero{
-    /* background-color: var(--primary-background-color); */
-    padding: 160px 0 30px;
+.hero {
+  /* background-color: var(--primary-background-color); */
+  padding: 160px 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .hero__container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 32px;
     align-items: center;
-    
-    .hero__container{
-        display: flex;
-        max-width: 1200px;
-        width: 100%;
-        padding: 0 32px;
-        align-items: center;
-        justify-content: space-between;
-        .hero__content{
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            max-width: 570px;
-        
-            .hero__title{
-                font: 74px Istok Web, sans-serif;
-                color: var(--primary-accent-color);
-            }
-            .hero__subtitle{
-                font: 19px chivo, sans-serif;
-                color: var(--secondary-accent-color);
-                font-weight: 650;
-            }
-            .hero__description{
-                font: 17px chivo, sans-serif;
-                color: var(--hero-description-color);
-        
-                .description__price{
-                    font: 31px chivo, sans-serif;
-                    color: var(--primary-accent-color);
-                    font-weight: bold;
-                }
-            }
-        }
-        .hero__filler{
-            max-width: 570px;
-        }
-    }
+    justify-content: space-between;
+    .hero__content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 570px;
 
-    .hero__button {
-        margin: 150px 0 0;
-        .iconElement__inner_2iN{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            svg{
-                transition: transform 0.3s ease;
-                &:hover {
-                    transform: scale(0.98);
-                    transition: transform 0.1s ease;
-                }
-            }
+      .hero__title {
+        font:
+          74px Istok Web,
+          sans-serif;
+        color: var(--primary-accent-color);
+      }
+      .hero__subtitle {
+        font:
+          19px chivo,
+          sans-serif;
+        color: var(--secondary-accent-color);
+        font-weight: 650;
+      }
+      .hero__description {
+        font:
+          17px chivo,
+          sans-serif;
+        color: var(--hero-description-color);
+
+        .description__price {
+          font:
+            31px chivo,
+            sans-serif;
+          color: var(--primary-accent-color);
+          font-weight: bold;
         }
+      }
     }
+    .hero__social {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 0 15px;
+    }
+  }
+
+  .hero__button {
+    margin: 150px 0 0;
+    .iconElement__inner_2iN {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(0.98);
+          transition: transform 0.1s ease;
+        }
+      }
+    }
+  }
 }
 
-header{
-    background-image: url("../img/header-background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+header {
+  background-image: url("../img/header-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-

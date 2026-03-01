@@ -1,0 +1,107 @@
+.main__benefits {
+  background-color: var(--benefits-background-color);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /* padding: 120px 0 80px; */
+  max-height: 819.76px;
+
+  .benefits__content {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .benefits__content,
+  .benefits__image-wrapper {
+    max-width: 50%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefits__content {
+    flex-direction: column;
+    padding: 120px 30px 110px;
+    gap: 5vh;
+    
+    .benefits__header {
+        max-width: 570px;
+        gap: 2vh;
+        .benefits__title {
+            font:
+            48px istok web,
+            sans-serif;
+            color: var(--benefits-primary-accent-color);
+            margin: 0;
+        }
+        .benefits__subtitle {
+            font:
+            19px chivo,
+            sans-serif;
+            margin: 0;
+            color: var(--benefits-secondary-accent-color);
+        }
+        .benefits__description {
+            font:
+            17px chivo,
+            sans-serif;
+            margin: 0;
+            color: var(--benefits-description-color);
+        }
+    }
+    .benefits__social {
+        display: flex;
+        flex-direction: column;
+        max-width: 570px;
+        gap: 2vh;
+
+        .benefits__social-item {
+          display: flex;
+          flex-direction: row;
+
+          .benefits__social-image {
+            display: flex;
+            background-color: var(--benefits-secondary-background-color);
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1/1;
+            width: 70px !important;
+            height: 70px;
+            border-radius: 50%;
+          }
+
+          .benefits__social-body {
+            .benefits__social-title {
+              font:
+                24px istok web,
+                sans-serif;
+              color: var(--benefits-primary-accent-color);
+            }
+            .benefits__social-text {
+                font:
+                    17px chivo,
+                    sans-serif;
+                color: var(--benefits-description-color);
+            }
+          }
+        }
+    }
+  }
+
+  .benefits__image-wrapper {
+    .benefits__image {
+      width: 100%;
+      height: auto;
+
+      @media (max-width: 1294px) {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+}

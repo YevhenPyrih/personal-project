@@ -8,7 +8,11 @@
 @import url("index.trust.css");
 @import url("index.ingredients.css");
 
-@import url("index.testimonials.css");
-@import url("index.promo.css");
 
 @import url("index.certificates.css");
+@import url("index.benefits.css");
+
+
+@import url("index.testimonials.css");
+@import url("index.promo.css");
+@import url("global.footer.css");
