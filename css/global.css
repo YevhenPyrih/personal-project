@@ -35,6 +35,8 @@
   --benefits-description-color: #9b8f22ad;
   
   --footer-divider-color: #aab99d;
+
+  --transition-speed-buttons: 0.15s;
 }
 
 .nav__logo{

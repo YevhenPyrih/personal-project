@@ -5,8 +5,9 @@ function render() {
     perMove: 1,          // ГОРТАТИ ПО 1 ЕЛЕМЕНТУ (те, що ви шукали!)
     gap    : '1rem',
     pagination: false,  // Вимкнути пагінацію
+    autoHeight: true,    // Дозволити висоті адаптуватися до контенту
     breakpoints: {
-      1024: {
+      768: {
         perPage: 1,      // На планшетах показувати 1
       }
     }

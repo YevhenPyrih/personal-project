@@ -23,11 +23,25 @@
         margin: 10px 0 0;
     }
 
+    .testimonials__carousel {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 2rem;
+
+    }
+    
+    .splide__pagination {
+        margin-top: 2rem; 
+        position: relative;
+    }
+
     .testimonial{
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        max-width: 600px;
+        margin: 0 auto;
         .testimonial__photo-container {
             height: 120px;
             overflow: hidden;

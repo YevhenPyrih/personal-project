@@ -3,6 +3,11 @@
   .promo__strip {
     background-color: var(--promo-strip-color);
     padding: 10px 0;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
     .promo__strip-text {
       color: var(--ingredients-secondary-accent-color);
       font:
@@ -10,15 +15,20 @@
         sans-serif;
       font-weight: 750;
       text-decoration: underline;
-      gap: 10px;
     }
     text-align: center;
   }
   .promo__content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     padding: 60px 0;
+
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
 
     .promo__content-container {
       display: flex;

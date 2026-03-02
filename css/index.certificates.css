@@ -1,34 +1,43 @@
 .main__certificates {
   background-color: var(--primary-background-color);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 125px 30px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 
   .certificates__info {
     display: flex;
     flex-direction: column;
-    max-width: calc(var(--certificates-max-width, 370px));
-    gap: calc(var(--certificates-gap, 20px));
-    padding: calc(var(--certificates-padding-vertical, 125px)) 0;
+    gap: 20px;
+
+    @media (min-width: 1024px) {
+      max-width: 370px;
+    }
 
     .certificates__title {
       font:
-        calc(var(--certificates-title-font-size, 48px)) Istok Web,
+        48px Istok Web,
         sans-serif;
       color: var(--primary-accent-color);
     }
 
     .certificates__subtitle {
       font:
-        calc(var(--certificates-subtitle-font-size, 19px)) Chivo,
+        19px Chivo,
         sans-serif;
       color: var(--secondary-accent-color);
     }
 
     .certificates__description {
       font:
-        calc(var(--certificates-description-font-size, 17px)) Chivo,
+        17px Chivo,
         sans-serif;
       color: var(--hero-description-color);
     }
@@ -36,8 +45,12 @@
 }
 
 .splide {
-  padding: 0 60px;
-  width: 800px;
+  padding: 0 30px;
+
+  @media (min-width: 1024px) {
+    max-width: 800px;
+    width: 100%;
+  }
 }
 
 .splide__slide {
@@ -48,7 +61,6 @@
 
 .splide__slide img {
   width: 100%;
-  max-width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
@@ -58,7 +70,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background: transparent; 
+  border: none; 
+  box-shadow: none;
+}
+
+.splide__arrow:hover {
+  path{
+    stroke: var(--promo-strip-color);
+    transition: stroke var(--transition-speed-buttons) ease;
+  }
 }
 
 .splide__arrow svg {
