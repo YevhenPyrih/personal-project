@@ -1,0 +1,70 @@
+.main__aspects {
+  background-color: var(--aspects-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 0 120px;
+
+  .aspects__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    max-width: 1200px;
+    width: 100%;
+    gap: 20px;
+    padding: 0 20px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    .aspects__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      max-width: none;
+      
+      @media (min-width: 768px) {
+          max-width: 250px;
+      }
+
+      .aspects__title {
+        font:
+          24px istok web,
+          sans-serif;
+        color: var(--primary-accent-color);
+      }
+
+      .aspects__text {
+        font:
+          17px chivo,
+          sans-serif;
+        color: var(--secondary-accent-color);
+      }
+
+      .aspects__list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+        .aspects__list-item {
+          font:
+            17px chivo,
+            sans-serif;
+          color: var(--primary-accent-color);
+
+          background-image: url(../img/leaf-icon.svg);
+          background-repeat: no-repeat;
+          background-size: 16px;
+          background-position: 0 50%;
+          padding-left: 24px;
+        }
+      }
+    }
+  }
+}

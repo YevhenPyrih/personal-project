@@ -36,6 +36,16 @@
   
   --footer-divider-color: #aab99d;
 
+  --plan-background-color: #f9f3ee;
+
+  --stores-item-background-color: #c2cbab;
+
+  --presentation-primary-accent-color: #f1e6e1;
+  --presentation-secondary-accent-color: #ffffffA6;
+  --presentation-description-color: #ffffff;
+
+  --aspects-background-color: #f1e6e1;
+
   --transition-speed-buttons: 0.15s;
 }
 

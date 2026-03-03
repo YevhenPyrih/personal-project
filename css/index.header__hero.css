@@ -10,9 +10,13 @@
     display: flex;
     max-width: 1200px;
     width: 100%;
-    padding: 0 32px;
+    padding: 0 16px;
     align-items: center;
     justify-content: space-between;
+    
+    @media(min-width: 768px){
+      padding: 0 32px;
+    }
     .hero__content {
       display: flex;
       flex-direction: column;

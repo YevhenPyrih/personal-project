@@ -9,7 +9,10 @@
 @import url("index.benefits.css");
 @import url("index.testers.css");
 
-
+@import url("index.aspects.css");
+@import url("index.plan.css");
+@import url("index.presentation.css");
+@import url("index.stores.css");
 @import url("index.testimonials.css");
 @import url("index.promo.css");
 @import url("global.footer.css");
