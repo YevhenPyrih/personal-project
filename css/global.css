@@ -44,6 +44,12 @@
   --presentation-secondary-accent-color: #ffffffA6;
   --presentation-description-color: #ffffff;
 
+  --product-background-color: #f9f3ee;
+  --product-accent-color: #c7964d;
+  --product-title-color: #325956;
+  --product-text-color: #668280;
+  --product-border-color: #3259560A;
+
   --aspects-background-color: #f1e6e1;
 
   --transition-speed-buttons: 0.15s;

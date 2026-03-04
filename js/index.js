@@ -1,6 +1,7 @@
 function init() {
     import('./index.about.js');
     import('./index.certificates.js');
+    import('./index.contents.js');
     import('./index.testimonial.js');
 }
 
