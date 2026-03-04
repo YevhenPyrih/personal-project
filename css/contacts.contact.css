@@ -176,11 +176,11 @@
         font-size: 17px;
         font-family: chivo, sans-serif;
         cursor: pointer;
-        transition: opacity 0.3s ease;
+        transition: background-color 0.3s ease;
         margin-top: 1rem;
 
         &:hover {
-          opacity: 0.85;
+          background-color: var(--primary-accent-color-hover);
         }
       }
     }

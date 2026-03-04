@@ -10,6 +10,7 @@
 :root {
   --primary-background-color: #c6cfac;
   --primary-accent-color: #325956;
+  --primary-accent-color-hover: #1b302e;
   --header-button-accent-color: #f1e6e1;
   --secondary-accent-color: #577270eb;
   --hero-description-color: #668280;
@@ -23,6 +24,7 @@
 
   --ingredients-background-color: #edc8e5;
   --ingredients-primary-accent-color: #7d318a;
+  --ingredients-primary-accent-color-hover: #682874;
   --ingredients-secondary-accent-color: #7d318aa3;
   --ingredients-description-color: #3716466e;
 

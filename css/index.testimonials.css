@@ -35,6 +35,46 @@
         position: relative;
     }
 
+    .splide__pagination__page {
+        width: 0.65rem;
+        height: 0.65rem;
+        opacity: 1;
+        background: var(--trust-secondary-highlight-color);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .splide__pagination__page.is-active {
+        transform: scale(1.15);
+        background: var(--trust-primary-highlight-color);
+    }
+
+    .splide__arrow {
+        opacity: 1;
+        width: 2.6rem;
+        height: 2.6rem;
+        background: var(--trust-primary-highlight-color);
+        border: 2px solid transparent;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .splide__arrow svg {
+        fill: var(--trust-background-color);
+    }
+
+    .splide__arrow:hover {
+        background: transparent;
+        border-color: var(--trust-primary-highlight-color);
+    }
+
+    .splide__arrow:hover svg {
+        fill: var(--trust-primary-highlight-color);
+    }
+
+    .splide__arrow:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+    }
+
     .testimonial{
         display: flex;
         flex-direction: column;
@@ -64,6 +104,44 @@
         .testimonial__date{
             font: 15px chivo, sans-serif;
             color: var(--trust-primary-highlight-color);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .main__testimonials {
+        .splide__arrow {
+            width: 1.7rem;
+            height: 1.7rem;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            opacity: 0.75;
+        }
+
+        .splide__arrow svg {
+            fill: var(--trust-primary-highlight-color);
+        }
+
+        .splide__arrow:hover {
+            background: transparent;
+            border: none;
+            opacity: 1;
+        }
+
+        .splide__pagination {
+            margin-top: 1.4rem;
+        }
+
+        .splide__pagination__page {
+            width: 0.45rem;
+            height: 0.45rem;
+            opacity: 0.7;
+        }
+
+        .splide__pagination__page.is-active {
+            transform: scale(1.08);
+            opacity: 0.95;
         }
     }
 }

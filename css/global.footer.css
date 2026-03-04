@@ -40,6 +40,25 @@
         font: 12px istok web, sans-serif;
         color: var(--secondary-accent-color);
         font-weight: 800;
+        text-decoration: none;
+        position: relative;
+
+        &::after {
+          background-color: var(--secondary-accent-color);
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 1.5px;
+          transform: scaleX(0);
+          transform-origin: bottom left;
+          transition: transform 0.3s ease-out;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
       }
     }
 
@@ -93,6 +112,24 @@
             sans-serif;
           font-weight: 600;
           text-decoration: none;
+          position: relative;
+
+          &::after {
+            background-color: var(--secondary-accent-color);
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1.5px;
+            transform: scaleX(0);
+            transform-origin: bottom left;
+            transition: transform 0.3s ease-out;
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+          }
         }
       }
 

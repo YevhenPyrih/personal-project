@@ -45,7 +45,7 @@
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    background-color: var(--header-big-highlight-color);
+    background-color: var(--primary-accent-color-hover);
     transition: background-color 0.3s ease-in-out;
   }
 }
