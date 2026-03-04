@@ -14,6 +14,10 @@
   --secondary-accent-color: rgba(87, 114, 112, 0.92);
   --hero-description-color: #668280;
 
+  --header-big-highlight-color: #1b302e;
+  --header-small-highlight-color: #51908b;
+
+
   --trust-background-color: #f1ded1;
   --trust-primary-highlight-color: #db9b3c;
   --trust-secondary-highlight-color: rgba(193, 139, 59, 0.64);

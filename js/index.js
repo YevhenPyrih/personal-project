@@ -1,4 +1,5 @@
 function init() {
+    import('./global.header__nav.js');
     import('./index.about.js');
     import('./index.certificates.js');
     import('./index.contents.js');

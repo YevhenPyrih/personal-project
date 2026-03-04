@@ -1,38 +1,185 @@
-.header__nav-wrapper{
-    /* background-color: var(--primary-background-color); */
-    width:100%;
-    height: 109.58px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.header__nav-wrapper {
+  /* background-color: var(--primary-background-color); */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.header__nav{
-    width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 15px;
+.header__nav {
+  max-height: 110px;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 15px;
 }
 
-.nav__menu{
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 25px;
+
+  .nav__link {
+    color: var(--secondary-accent-color);
+    font:
+      15px chivo,
+      sans-serif;
+    font-weight: 600;
+  }
+}
+
+.nav__button {
+  background-color: var(--primary-accent-color);
+  color: var(--header-button-accent-color);
+  max-width: 194.82px;
+  width: 194.82px;
+  height: 46.8px;
+  font:
+    14px chivo,
+    sans-serif;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--header-big-highlight-color);
+    transition: background-color 0.3s ease-in-out;
+  }
+}
+
+.nav__mobile-nav {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0 25px;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.1s ease-in-out;
+
+  .nav__mobile-menu {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0 25px;
-    .nav__link{
-        color: var(--secondary-accent-color);
-        font: 15px chivo, sans-serif;
-        font-weight: 600;
+    list-style: none;
+    gap: 25px 0;
+    padding: 0;
+  }
+}
+
+.show__mobile-nav {
+  height: calc(100vh - 110px);
+  transition: height 0.3s ease-in-out;
+}
+
+.nav__link {
+  color: var(--secondary-accent-color);
+  font:
+    15px chivo,
+    sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    background-color: var(--secondary-accent-color);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.nav__burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 32px;
+  border: 1px solid var(--primary-accent-color);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:hover .nav__hamburger,
+  &:hover .nav__hamburger::before,
+  &:hover .nav__hamburger::after {
+    background-color: var(--header-small-highlight-color);
+  }
+
+  &.is-active {
+    .nav__hamburger {
+      background-color: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
     }
+
+    &:hover .nav__hamburger {
+      background-color: transparent;
+    }
+  }
 }
 
-.nav__button{
+.nav__hamburger {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--primary-accent-color);
+  border-radius: 2px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    top 0.3s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
     background-color: var(--primary-accent-color);
-    color: var(--header-button-accent-color);
-    max-width: 194.82px; 
-    width: 194.82px;
-    height: 46.8px;
-    font: 14px chivo, sans-serif;
+    border-radius: 2px;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease,
+      top 0.3s ease;
+  }
+
+  &::before {
+    top: -6px;
+  }
+
+  &::after {
+    top: 6px;
+  }
 }
