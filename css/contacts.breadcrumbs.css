@@ -1,0 +1,36 @@
+.breadcrumbs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--primary-accent-color);
+
+    padding: 60px 0 65px;
+
+    .breadcrumbs__title {
+        font: 48px istok web, sans-serif;
+        color: var(--breadcrumbs-title-color);
+        font-weight: 600;
+    }
+
+    .breadcrumbs__path {
+        font: 12px istok web, sans-serif;
+        color: var(--breadcrumbs-text-color);
+        font-weight: 500;
+
+        .breadcrumbs__current {
+            text-decoration: underline;
+        }
+    }
+    .breadcrumbs__path {
+        font: 12px istok web, sans-serif;
+        color: var(--breadcrumbs-text-color);
+        font-weight: 500;
+        
+        .breadcrumbs__current {
+            text-decoration: underline;
+            font-weight: 700;
+        }
+    }
+}
