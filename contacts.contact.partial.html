@@ -1,0 +1,118 @@
+<div class="main__contact">
+  <div class="contact__info">
+    <div class="contact__header">
+      <h2 class="contact__title">Contact Us</h2>
+      <p class="contact__intro-text">
+        Feel free to contact us if you have any questions.
+      </p>
+      <p class="contact__description">
+        Fill out the form on the right or contact us in any other way convenient
+        for you to learn more about our products and offers.
+      </p>
+    </div>
+
+    <div class="contact__items">
+      <div class="contact__item contact__item--general">
+        <div class="contact__icon-wrapper">
+          <img
+            class="contact__icon"
+            src="img/telephone-icon.svg"
+            alt="Phone icon"
+          />
+        </div>
+        <div class="contact__item-body">
+          <h3 class="contact__item-title">CONTACTS</h3>
+          <address class="contact__address">
+            <a
+              class="contact__link contact__link--phone"
+              href="tel:+12345678900"
+              >1 (234) 567 89 00</a
+            >
+            <a
+              class="contact__link contact__link--email"
+              href="mailto:shine@email.com"
+              >shine@email.com</a
+            >
+          </address>
+        </div>
+      </div>
+
+      <div class="contact__item contact__item--reseller">
+        <div class="contact__icon-wrapper">
+          <img
+            class="contact__icon"
+            src="img/product-icon.svg"
+            alt="Product icon"
+          />
+        </div>
+        <div class="contact__item-body">
+          <h3 class="contact__item-title">FOR RESELLERS</h3>
+          <address class="contact__address">
+            <a
+              class="contact__link contact__link--phone"
+              href="tel:+12345678901"
+              >1 (234) 567 89 01</a
+            >
+            <a
+              class="contact__link contact__link--email"
+              href="mailto:shine.reseller@email.com"
+              >shine.reseller@email.com</a
+            >
+          </address>
+        </div>
+      </div>
+
+      <div class="contact__item contact__item--office">
+        <div class="contact__icon-wrapper">
+          <img
+            class="contact__icon"
+            src="img/location-icon.svg"
+            alt="Location icon"
+          />
+        </div>
+        <div class="contact__item-body">
+          <h3 class="contact__item-title">MAIN OFFICE</h3>
+          <p class="contact__office-address">
+            <span>55 Lexington Ave,</span>
+            <span>New York, NY 10010, USA</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact__form">
+    <form
+      class="contact__form-container"
+      action="https://formspree.io/f/mqedrrrr"
+      method="post"
+    >
+      <input
+        name="Name"
+        id="name"
+        type="text"
+        placeholder="Your name*"
+        aria-label="Your name"
+        required
+      />
+
+      <input
+        name="Phone"
+        id="phone"
+        type="tel"
+        placeholder="Phone number*"
+        aria-label="Phone number"
+        required
+      />
+
+      <textarea
+        name="Message"
+        id="message"
+        placeholder="Your message"
+        aria-label="Your message"
+      ></textarea>
+
+      <button type="submit" class="button contact__submit-btn">Send</button>
+    </form>
+  </div>
+</div>

@@ -11,7 +11,7 @@
   --primary-background-color: #c6cfac;
   --primary-accent-color: #325956;
   --header-button-accent-color: #f1e6e1;
-  --secondary-accent-color: rgba(87, 114, 112, 0.92);
+  --secondary-accent-color: #577270eb;
   --hero-description-color: #668280;
 
   --header-big-highlight-color: #1b302e;
@@ -57,6 +57,12 @@
 
   --breadcrumbs-title-color: #f9f3ee;
   --breadcrumbs-text-color: #f9f3ee87;
+
+  --contacts-secondary-background-color: #b7c4a4;
+
+  --form-background-color: #ebe4dd;
+  --form-text-area-background-color: rgba(255, 255, 255, 0.4);
+  --form-text-area-focus-background-color: rgba(255, 255, 255, 0.7);
 
   --transition-speed-buttons: 0.15s;
 }
