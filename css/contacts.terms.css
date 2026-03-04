@@ -1,0 +1,151 @@
+.main__terms {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  background-color: var(--primary-background-color);
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+
+  .terms__header {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .terms__title {
+      font:
+        24px istok web,
+        sans-serif;
+      color: var(--primary-accent-color);
+      margin: 0;
+    }
+
+    .terms__intro-text {
+      font:
+        17px chivo,
+        sans-serif;
+      color: var(--hero-description-color);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .terms__content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    gap: 4rem; /* Creates the space between the two columns */
+
+    /* Responsive collapse for mobile screens */
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .terms__accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      flex: 1; /* Ensures both columns take up equal space */
+
+      /* Bootstrap Accordion Overrides */
+      .accordion-item {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+      }
+
+      .accordion-header {
+        margin: 0;
+      }
+
+      .accordion-button {
+        background-color: transparent;
+        color: var(--primary-accent-color);
+        font:
+          17px chivo,
+          sans-serif;
+        padding: 1.5rem 0;
+        padding-right: 2rem; /* Ensure text doesn't overlap the custom icon */
+        box-shadow: none;
+        position: relative;
+
+        /* Horizontal line of the + / - */
+        &::after {
+          background-image: none; /* Removes Bootstrap's default chevron */
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 1rem;
+          height: 2px;
+          background-color: var(--primary-accent-color);
+          transform: translateY(-50%) rotate(0deg);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        /* Vertical line of the + */
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 1rem;
+          height: 2px;
+          background-color: var(--primary-accent-color);
+          transform: translateY(-50%) rotate(90deg);
+          transition:
+            transform 0.3s ease-in-out,
+            opacity 0.3s ease-in-out;
+        }
+
+        /* Active / Open State */
+        &:not(.collapsed) {
+          background-color: transparent;
+          color: var(--primary-accent-color);
+          box-shadow: none;
+
+          /* Spin the horizontal line 180 degrees */
+          &::after {
+            transform: translateY(-50%) rotate(180deg);
+          }
+
+          /* Spin the vertical line to match the horizontal one and fade it out */
+          &::before {
+            transform: translateY(-50%) rotate(180deg);
+            opacity: 0;
+          }
+        }
+      }
+
+      .accordion-body {
+        padding: 0 0 1.5rem 0; /* Keep padding bottom, remove sides */
+        font:
+          15px chivo,
+          sans-serif;
+        color: var(--secondary-accent-color);
+        line-height: 1.6;
+
+        .terms__list {
+          padding-left: 1.25rem;
+          margin-bottom: 0;
+
+          li {
+            margin-bottom: 0.5rem;
+            &::marker {
+              font-weight: 700;
+              color: var(--primary-accent-color);
+            }
+          }
+        }
+
+        .terms__text {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

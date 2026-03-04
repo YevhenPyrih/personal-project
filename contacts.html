@@ -40,7 +40,11 @@
         data-hx-get="contacts.breadcrumbs.partial.html"
       ></div>
 
-
+      <div
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="contacts.terms.partial.html"
+      ></div>
       <div
         data-hx-trigger="load"
         data-hx-swap="outerHTML"
@@ -54,6 +58,12 @@
         data-hx-get="global.footer-nav.partial.html"
       ></nav>
     </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.bootstrap.js"></script>
 
     <script src="js/contacts.js"></script>
   </body>
