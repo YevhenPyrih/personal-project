@@ -17,7 +17,6 @@
   --header-big-highlight-color: #1b302e;
   --header-small-highlight-color: #51908b;
 
-
   --trust-background-color: #f1ded1;
   --trust-primary-highlight-color: #db9b3c;
   --trust-secondary-highlight-color: rgba(193, 139, 59, 0.64);
@@ -37,7 +36,7 @@
   --benefits-primary-accent-color: #a39135;
   --benefits-secondary-accent-color: #9b8f33b8;
   --benefits-description-color: #9b8f22ad;
-  
+
   --footer-divider-color: #aab99d;
 
   --plan-background-color: #f9f3ee;
@@ -45,33 +44,35 @@
   --stores-item-background-color: #c2cbab;
 
   --presentation-primary-accent-color: #f1e6e1;
-  --presentation-secondary-accent-color: #ffffffA6;
+  --presentation-secondary-accent-color: #ffffffa6;
   --presentation-description-color: #ffffff;
 
   --product-background-color: #f9f3ee;
   --product-accent-color: #c7964d;
   --product-title-color: #325956;
   --product-text-color: #668280;
-  --product-border-color: #3259560A;
+  --product-border-color: #3259560a;
 
   --aspects-background-color: #f1e6e1;
 
   --transition-speed-buttons: 0.15s;
 }
 
-.nav__logo{
-    width: 105.73px;
-    height: 49.59px;
+.nav__logo {
+  width: 105.73px;
+  height: 49.59px;
 }
 
 .outlined_2wD {
   .border_2yy,
   .logo_2gS {
     fill: var(--primary-accent-color);
+    transition: fill var(--transition-speed-buttons) ease-in-out;
   }
 
   .outer_bDW {
     fill: transparent;
+    transition: fill var(--transition-speed-buttons) ease-in-out;
   }
 }
 
@@ -79,9 +80,11 @@
   .border_2yy,
   .logo_2gS {
     fill: transparent;
+    transition: fill var(--transition-speed-buttons) ease-in-out;
   }
 
   .outer_bDW {
     fill: var(--primary-accent-color);
+    transition: fill var(--transition-speed-buttons) ease-in-out;
   }
 }

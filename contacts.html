@@ -20,6 +20,9 @@
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="css/contacts.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   </head>
   <body>
@@ -30,7 +33,13 @@
         data-hx-get="global.header-nav.partial.html"
       ></nav>
     </header>
-    <main></main>
+    <main>
+      <div
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="contacts.privacy.partial.html"
+      ></div>
+    </main>
     <footer>
       <nav
         data-hx-trigger="load"

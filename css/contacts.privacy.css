@@ -1,0 +1,114 @@
+.main__privacy {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Increased to separate header and content */
+  background-color: var(--primary-background-color);
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem; /* Added padding for breathing room */
+
+  .privacy__header {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .privacy__title {
+      font:
+        24px istok web,
+        sans-serif;
+      color: var(--primary-accent-color);
+      margin: 0;
+    }
+
+    .privacy__intro-text {
+      font:
+        17px chivo,
+        sans-serif;
+      color: var(--hero-description-color);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .privacy__content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    gap: 4rem; /* Space between the two main columns */
+
+    /* Responsive collapse for mobile screens */
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .privacy__sections-row {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem; /* Acts as a minimum space if the screen gets small */
+      justify-content: space-between; /* Distributes the sections to top and bottom */
+      flex: 1;
+    }
+
+    .privacy__section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .privacy__section-title {
+        font:
+          17px chivo,
+          sans-serif;
+        color: var(--primary-accent-color);
+        margin: 0;
+      }
+
+      .privacy__section-text {
+        font:
+          15px chivo,
+          sans-serif;
+        color: var(--secondary-accent-color);
+        font-style: italic; /* Matches image styling */
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .privacy__section-list {
+        margin: 0;
+        padding-left: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        li {
+          font:
+            15px chivo,
+            sans-serif;
+          color: var(--secondary-accent-color);
+          font-style: italic;
+          line-height: 1.1;
+
+          /* Bolds the a, b, c or bullet marker */
+          &::marker {
+            font-weight: 700;
+          }
+        }
+      }
+
+      .privacy__section-list li::marker {
+        color: var(--primary-accent-color);
+      }
+
+      &:not(.privacy__section--choices) .privacy__section-list {
+        list-style-type: lower-alpha;
+      }
+
+      /* Bullet lists for the 'Choices' section */
+      &.privacy__section--choices .privacy__section-list {
+        list-style-type: disc;
+      }
+    }
+  }
+}
