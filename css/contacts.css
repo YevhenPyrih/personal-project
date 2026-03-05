@@ -10,3 +10,15 @@
 @import url("contacts.terms.css");
 @import url("contacts.privacy.css");
 @import url("global.footer.css");
+
+html,
+body {
+	width: 100%;
+	overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}

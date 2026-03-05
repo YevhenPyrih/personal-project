@@ -2,11 +2,16 @@ const burgerBtn = document.querySelector(".nav__burger");
 const mobileNav = document.querySelector(".nav__mobile-nav");
 const mobileLinks = mobileNav.querySelectorAll(".nav__mobile-menu .nav__link");
 const navLinks = document.querySelectorAll(".nav__link");
-const hamburger = document.querySelector(".nav__hamburger");
 
 const normalizePath = (pathname) => {
   if (!pathname || pathname === "/") return "/index.html";
   return pathname.endsWith("/") ? `${pathname}index.html` : pathname;
+};
+
+const getPendingKey = (path) => {
+  if (path === "/index.html") return "pendingIndexHash";
+  if (path === "/contacts.html") return "pendingContactsHash";
+  return "";
 };
 
 const handleSamePageAnchor = (e) => {
@@ -16,9 +21,10 @@ const handleSamePageAnchor = (e) => {
   const targetUrl = new URL(href, window.location.href);
   const currentPath = normalizePath(window.location.pathname);
   const targetPath = normalizePath(targetUrl.pathname);
+  const pendingKey = getPendingKey(targetPath);
 
-  if (targetPath === "/index.html" && targetUrl.hash) {
-    sessionStorage.setItem("pendingIndexHash", targetUrl.hash);
+  if (pendingKey && targetUrl.hash) {
+    sessionStorage.setItem(pendingKey, targetUrl.hash);
   }
 
   if (currentPath !== targetPath || !targetUrl.hash) return;

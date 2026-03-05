@@ -1,3 +1,23 @@
 .header__nav-wrapper {
     background-color: var(--primary-background-color);
 }
+
+.nav__mobile-nav {
+    display: flex;
+    width: 100%;
+    background-color: var(--primary-background-color);
+    justify-content: flex-start;
+    gap: 24px 0;
+
+    .nav__mobile-menu {
+        width: 100%;
+        justify-content: flex-start;
+        margin: 0;
+    }
+}
+
+.show__mobile-nav {
+    height: calc(100dvh - 110px);
+    min-height: calc(100vh - 110px);
+    padding-top: 24px;
+}
