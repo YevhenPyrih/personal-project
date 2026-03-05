@@ -20,6 +20,5 @@ function initScrollTopButton() {
   updateVisibility();
 }
 
-initScrollTopButton();
 document.addEventListener("DOMContentLoaded", initScrollTopButton);
 document.body.addEventListener("htmx:load", initScrollTopButton);

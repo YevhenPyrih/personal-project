@@ -34,14 +34,12 @@ const handleSamePageAnchor = (e) => {
 const closeMenu = () => {
   mobileNav.classList.remove("show__mobile-nav");
   document.body.style.overflow = "";
-  // FIX: Target burgerBtn and use only the class name
   burgerBtn.classList.remove("is-active");
 };
 
 burgerBtn.addEventListener("click", (e) => {
   e.preventDefault();
   mobileNav.classList.toggle("show__mobile-nav");
-  // FIX: Target burgerBtn and use only the class name
   burgerBtn.classList.toggle("is-active");
 
   if (mobileNav.classList.contains("show__mobile-nav")) {

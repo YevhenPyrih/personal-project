@@ -30,22 +30,34 @@ function alignToTarget(hash) {
 function scrollToHashTarget() {
     if (!initialTargetHash) return;
 
-    // First pass right after sections are injected.
     alignToTarget(initialTargetHash);
-
-    // Second pass after late layout shifts (images/carousels/fonts) settle.
     requestAnimationFrame(() => {
         setTimeout(() => alignToTarget(initialTargetHash), 180);
     });
 }
 
-const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;
-let loadedPartialsCount = 0;
+function runAfterAllPartialsLoaded(callback) {
+    const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;
 
-document.body.addEventListener('htmx:afterOnLoad', () => {
-    loadedPartialsCount++;
-    if (loadedPartialsCount === totalPartials) {
-        init();
-        scrollToHashTarget();
+    if (totalPartials === 0) {
+        callback();
+        return;
     }
+
+    let loadedPartialsCount = 0;
+
+    const handleAfterOnLoad = () => {
+        loadedPartialsCount += 1;
+        if (loadedPartialsCount !== totalPartials) return;
+
+        document.body.removeEventListener('htmx:afterOnLoad', handleAfterOnLoad);
+        callback();
+    };
+
+    document.body.addEventListener('htmx:afterOnLoad', handleAfterOnLoad);
+}
+
+runAfterAllPartialsLoaded(() => {
+    init();
+    scrollToHashTarget();
 });

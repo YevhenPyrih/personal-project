@@ -2,6 +2,7 @@ const UNIT_PRICE = 399.99;
 const STORAGE_KEY = "shineBoxQty";
 const ORDER_STORAGE_KEY = "shineLastOrder";
 const ORDER_COUNTER_KEY = "shineLastOrderCounter";
+const RETURN_REDIRECT_KEY = "shineThankYouOnReturn";
 const MODAL_ENDPOINT = "/components/modal.html";
 const PRODUCT_NAME = "Shine Box";
 const PRODUCT_IMAGE = "img/product-sea.webp";
@@ -21,6 +22,26 @@ function getStoredQty(defaultValue = 0) {
 
 function setStoredQty(value) {
   localStorage.setItem(STORAGE_KEY, String(value));
+}
+
+function getThankYouUrl() {
+  return new URL("thank-you.html", window.location.href).href;
+}
+
+function shouldSkipReturnRedirect() {
+  const path = window.location.pathname;
+  return path.endsWith("/thank-you.html") || path.endsWith("thank-you.html");
+}
+
+function redirectToThankYouOnReturn() {
+  if (sessionStorage.getItem(RETURN_REDIRECT_KEY) !== "1") return;
+  if (shouldSkipReturnRedirect()) {
+    sessionStorage.removeItem(RETURN_REDIRECT_KEY);
+    return;
+  }
+
+  sessionStorage.removeItem(RETURN_REDIRECT_KEY);
+  window.location.replace(getThankYouUrl());
 }
 
 function getNextOrderId() {
@@ -103,7 +124,17 @@ function initModalContent() {
   const promoInput = modalContainer.querySelector(".cart__promo-input");
   const promoStatus = modalContainer.querySelector(".cart__promo-status");
   const orderForm = modalContainer.querySelector(".cart__form");
+  const nextInput = modalContainer.querySelector("#modal-next-url");
+  const redirectInput = modalContainer.querySelector("#modal-redirect-url");
   if (!qtyInput) return;
+
+  const thankYouUrl = getThankYouUrl();
+  if (nextInput instanceof HTMLInputElement) {
+    nextInput.value = thankYouUrl;
+  }
+  if (redirectInput instanceof HTMLInputElement) {
+    redirectInput.value = thankYouUrl;
+  }
 
   const calculatePricing = (currentQty) => {
     const baseTotal = currentQty * UNIT_PRICE;
@@ -201,12 +232,15 @@ function initModalContent() {
   }
 
   if (orderForm) {
-    orderForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
+    orderForm.addEventListener("submit", () => {
+      sessionStorage.setItem(RETURN_REDIRECT_KEY, "1");
 
-      const submitBtn = orderForm.querySelector(".cart__submit-btn");
-      if (submitBtn instanceof HTMLButtonElement) {
-        submitBtn.disabled = true;
+      const submitThankYouUrl = getThankYouUrl();
+      if (nextInput instanceof HTMLInputElement) {
+        nextInput.value = submitThankYouUrl;
+      }
+      if (redirectInput instanceof HTMLInputElement) {
+        redirectInput.value = submitThankYouUrl;
       }
 
       const orderData = getCurrentOrderData();
@@ -232,23 +266,13 @@ function initModalContent() {
 
       localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify(snapshot));
       localStorage.removeItem(STORAGE_KEY);
-
-      try {
-        await fetch(orderForm.action, {
-          method: orderForm.method || "POST",
-          body: formData,
-          headers: { Accept: "application/json" },
-        });
-      } catch {
-        // Redirect anyway so the user receives an in-site confirmation screen.
-      } finally {
-        window.location.assign("thank-you.html");
-      }
     });
   }
 }
 
 document.addEventListener("DOMContentLoaded", updateFloatingCart);
+document.addEventListener("DOMContentLoaded", redirectToThankYouOnReturn);
+window.addEventListener("pageshow", redirectToThankYouOnReturn);
 
 document.body.addEventListener("click", (event) => {
   if (!(event.target instanceof Element)) return;

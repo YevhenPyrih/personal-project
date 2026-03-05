@@ -1,16 +1,13 @@
-function render() {
-  new Splide( '.splide--certificates', {
-    type   : 'loop',     // Нескінченна прокрутка
-    perPage: 2,          // Показувати 2 елементи
-    perMove: 1,          // ГОРТАТИ ПО 1 ЕЛЕМЕНТУ (те, що ви шукали!)
-    gap    : '1rem',
-    pagination: false,  // Вимкнути пагінацію
-    autoHeight: true,    // Дозволити висоті адаптуватися до контенту
-    breakpoints: {
-      768: {
-        perPage: 1,      // На планшетах показувати 1
-      }
-    }
-  } ).mount();
-}
-render();
+new Splide('.splide--certificates', {
+  type: 'loop',
+  perPage: 2,
+  perMove: 1,
+  gap: '1rem',
+  pagination: false,
+  autoHeight: true,
+  breakpoints: {
+    768: {
+      perPage: 1,
+    },
+  },
+}).mount();
