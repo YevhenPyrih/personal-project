@@ -3,7 +3,7 @@ const STORAGE_KEY = "shineBoxQty";
 const ORDER_STORAGE_KEY = "shineLastOrder";
 const ORDER_COUNTER_KEY = "shineLastOrderCounter";
 const RETURN_REDIRECT_KEY = "shineThankYouOnReturn";
-const MODAL_ENDPOINT = "/components/modal.html";
+const MODAL_ENDPOINT_SUFFIX = "components/modal.html";
 const PRODUCT_NAME = "Shine Box";
 const PRODUCT_IMAGE = "img/product-sea.webp";
 const PROMO_DISCOUNTS = {
@@ -278,7 +278,7 @@ document.body.addEventListener("click", (event) => {
   if (!(event.target instanceof Element)) return;
 
   const openTrigger = event.target.closest(
-    `[hx-get="${MODAL_ENDPOINT}"]:not(#floating-cart-btn)`
+    `[hx-get$="${MODAL_ENDPOINT_SUFFIX}"]:not(#floating-cart-btn)`
   );
   if (openTrigger) {
     setStoredQty(getStoredQty(0) + 1);
