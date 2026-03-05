@@ -22,7 +22,11 @@
       <div class="cart__products-section">
         <h3 class="cart__section-title">Products</h3>
         <div class="cart__item">
-          <img src="img/product-sea.webp" alt="Shine Box" class="cart__item-img" />
+          <img
+            src="img/product-sea.webp"
+            alt="Shine Box"
+            class="cart__item-img"
+          />
           <span class="cart__item-name">Shine Box (FAL)</span>
           <input type="number" value="0" min="1" class="cart__item-qty" />
           <span class="cart__item-price">$399,99USD</span>
@@ -36,7 +40,24 @@
             aria-label="Delete item"
             data-clear-cart
           >
-            🗑️
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="cart__delete-icon"
+            >
+              <path d="M3 6h18" />
+              <path d="M8 6V4h8v2" />
+              <path d="M6 6l1 14h10l1-14" />
+              <path d="M10 11v6" />
+              <path d="M14 11v6" />
+            </svg>
           </button>
         </div>
 
@@ -67,6 +88,13 @@
           method="post"
           class="cart__form"
         >
+          <input
+            type="hidden"
+            name="Details"
+            id="modal-order-summary"
+            value="Items: 1 | Total: $399,99USD | Promo: None"
+          />
+
           <div class="cart__input-group">
             <label for="modal-name">Name <span class="required">*</span></label>
             <input
@@ -80,9 +108,11 @@
           </div>
 
           <div class="cart__input-group">
-            <label for="modal-email">Email <span class="required">*</span></label>
+            <label for="modal-email"
+              >Email <span class="required">*</span></label
+            >
             <input
-              name="Email"
+              name="email"
               id="modal-email"
               type="email"
               placeholder="Your email address"
@@ -92,7 +122,9 @@
           </div>
 
           <div class="cart__input-group">
-            <label for="modal-phone">Phone <span class="required">*</span></label>
+            <label for="modal-phone"
+              >Phone <span class="required">*</span></label
+            >
             <input
               name="Phone"
               id="modal-phone"

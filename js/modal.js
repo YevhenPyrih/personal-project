@@ -1,6 +1,10 @@
 const UNIT_PRICE = 399.99;
 const STORAGE_KEY = "shineBoxQty";
+const ORDER_STORAGE_KEY = "shineLastOrder";
+const ORDER_COUNTER_KEY = "shineLastOrderCounter";
 const MODAL_ENDPOINT = "/components/modal.html";
+const PRODUCT_NAME = "Shine Box";
+const PRODUCT_IMAGE = "img/product-sea.webp";
 const PROMO_DISCOUNTS = {
   BeginnerPromo: 0.02,
   SoftServe: 0.2,
@@ -17,6 +21,14 @@ function getStoredQty(defaultValue = 0) {
 
 function setStoredQty(value) {
   localStorage.setItem(STORAGE_KEY, String(value));
+}
+
+function getNextOrderId() {
+  const previous = Number.parseInt(localStorage.getItem(ORDER_COUNTER_KEY), 10) || 0;
+  const next = previous + 1;
+  localStorage.setItem(ORDER_COUNTER_KEY, String(next));
+
+  return `#${String(next).padStart(4, "0")}`;
 }
 
 function updateFloatingCart() {
@@ -85,22 +97,41 @@ function initModalContent() {
   const qtyInput = modalContainer.querySelector(".cart__item-qty");
   const priceDisplay = modalContainer.querySelector(".cart__item-price");
   const totalDisplay = modalContainer.querySelector(".cart__total");
+  const orderSummaryInput = modalContainer.querySelector("#modal-order-summary");
   const promoLink = modalContainer.querySelector(".cart__promo-link");
   const promoArea = modalContainer.querySelector(".cart__promo-area");
   const promoInput = modalContainer.querySelector(".cart__promo-input");
   const promoStatus = modalContainer.querySelector(".cart__promo-status");
+  const orderForm = modalContainer.querySelector(".cart__form");
   if (!qtyInput) return;
 
-  const updatePrices = (currentQty) => {
+  const calculatePricing = (currentQty) => {
     const baseTotal = currentQty * UNIT_PRICE;
     const promoData = getPromoData(promoInput?.value || "");
     const discount = promoData ? promoData.discount : 0;
     const total = baseTotal * (1 - discount);
-    const formattedUnitPrice = formatPrice(UNIT_PRICE);
-    const formattedTotal = formatPrice(total);
+
+    return {
+      promoData,
+      total,
+      formattedUnitPrice: formatPrice(UNIT_PRICE),
+      formattedTotal: formatPrice(total),
+    };
+  };
+
+  const updateOrderMeta = (currentQty, formattedTotal, promoData) => {
+    if (orderSummaryInput) {
+      const promoCode = promoData ? promoData.code : "None";
+      orderSummaryInput.value = `Items: ${currentQty} | Total: ${formattedTotal} | Promo: ${promoCode}`;
+    }
+  };
+
+  const updatePrices = (currentQty) => {
+    const { promoData, formattedUnitPrice, formattedTotal } = calculatePricing(currentQty);
 
     if (priceDisplay) priceDisplay.textContent = formattedUnitPrice;
     if (totalDisplay) totalDisplay.textContent = `Total: ${formattedTotal}`;
+    updateOrderMeta(currentQty, formattedTotal, promoData);
 
     if (!promoStatus) return;
 
@@ -114,13 +145,25 @@ function initModalContent() {
     promoStatus.textContent = "";
   };
 
+  const getCurrentOrderData = () => {
+    const currentQty = Math.max(1, Number.parseInt(qtyInput.value, 10) || 1);
+    const { promoData, formattedUnitPrice, formattedTotal } = calculatePricing(currentQty);
+
+    return {
+      quantity: currentQty,
+      promoCode: promoData ? promoData.code : "None",
+      unitPriceText: formattedUnitPrice,
+      totalText: formattedTotal,
+    };
+  };
+
   const qty = Math.max(1, getStoredQty(1));
   qtyInput.value = qty;
   setStoredQty(qty);
   updatePrices(qty);
   updateFloatingCart();
 
-  qtyInput.addEventListener("input", (event) => {
+  const syncQty = (event) => {
     const target = event.target;
     const nextQty = Math.max(1, Number.parseInt(target.value, 10) || 1);
 
@@ -128,7 +171,10 @@ function initModalContent() {
     setStoredQty(nextQty);
     updatePrices(nextQty);
     updateFloatingCart();
-  });
+  };
+
+  qtyInput.addEventListener("input", syncQty);
+  qtyInput.addEventListener("change", syncQty);
 
   if (promoLink && promoArea) {
     promoLink.addEventListener("click", (event) => {
@@ -145,9 +191,59 @@ function initModalContent() {
   }
 
   if (promoInput) {
-    promoInput.addEventListener("input", () => {
+    const syncPromo = () => {
       const currentQty = Math.max(1, Number.parseInt(qtyInput.value, 10) || 1);
       updatePrices(currentQty);
+    };
+
+    promoInput.addEventListener("input", syncPromo);
+    promoInput.addEventListener("change", syncPromo);
+  }
+
+  if (orderForm) {
+    orderForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const submitBtn = orderForm.querySelector(".cart__submit-btn");
+      if (submitBtn instanceof HTMLButtonElement) {
+        submitBtn.disabled = true;
+      }
+
+      const orderData = getCurrentOrderData();
+      const formData = new FormData(orderForm);
+
+      const snapshot = {
+        orderId: getNextOrderId(),
+        quantity: orderData.quantity,
+        promoCode: orderData.promoCode,
+        totalText: orderData.totalText,
+        product: {
+          name: PRODUCT_NAME,
+          image: PRODUCT_IMAGE,
+          unitPriceText: orderData.unitPriceText,
+        },
+        customer: {
+          comments: String(formData.get("Comments") || "-").trim() || "-",
+          name: String(formData.get("Name") || "-").trim() || "-",
+          email: String(formData.get("email") || "-").trim() || "-",
+          phone: String(formData.get("Phone") || "-").trim() || "-",
+        },
+      };
+
+      localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify(snapshot));
+      localStorage.removeItem(STORAGE_KEY);
+
+      try {
+        await fetch(orderForm.action, {
+          method: orderForm.method || "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+      } catch {
+        // Redirect anyway so the user receives an in-site confirmation screen.
+      } finally {
+        window.location.assign("thank-you.html");
+      }
     });
   }
 }
