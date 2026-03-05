@@ -1,5 +1,3 @@
-const footerLinks = document.querySelectorAll('.footer__link, .footer__legal-link');
-
 const normalizePath = (pathname) => {
   if (!pathname || pathname === '/') return '/index.html';
   return pathname.endsWith('/') ? `${pathname}index.html` : pathname;
@@ -11,8 +9,8 @@ const getPendingKey = (path) => {
   return '';
 };
 
-const handleFooterAnchor = (e) => {
-  const href = e.currentTarget.getAttribute('href');
+const handleFooterAnchor = (e, link) => {
+  const href = link.getAttribute('href');
   if (!href) return;
 
   const targetUrl = new URL(href, window.location.href);
@@ -33,8 +31,11 @@ const handleFooterAnchor = (e) => {
   target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
-if (footerLinks) {
-  footerLinks.forEach((link) => {
-    link.addEventListener('click', handleFooterAnchor);
-  });
-}
+document.addEventListener('click', (e) => {
+  if (!(e.target instanceof Element)) return;
+
+  const link = e.target.closest('.footer__link, .footer__legal-link');
+  if (!link) return;
+
+  handleFooterAnchor(e, link);
+});
