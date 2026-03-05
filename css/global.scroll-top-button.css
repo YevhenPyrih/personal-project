@@ -1,0 +1,49 @@
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  /* Assuming this variable holds the dark green color from your images */
+  background-color: var(--primary-accent-color);
+  /* Assuming this variable holds the light cream color for the icon */
+  color: var(--secondary-accent-color, #ffffff);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 980; /* Keeps it under your modal overlay */
+
+  /* Animation for showing/hiding */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    /* Smooth transition for the icon color change */
+    transition: color 0.3s ease;
+  }
+
+  /* When the 'hidden' class is applied */
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Slides down slightly as it fades out */
+  }
+
+  /* Hover effect */
+  &:hover {
+    transform: translateY(-3px); /* Gives it a little "lift" */
+
+    /* Change the arrow color on hover as requested */
+    svg {
+      stroke: var(--ingredients-background-color);
+    }
+  }
+}

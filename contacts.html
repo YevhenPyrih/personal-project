@@ -35,6 +35,19 @@
       ></nav>
     </header>
     <main>
+      <div id="modal-container"></div>
+
+      <div
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="global.shopping-cart-button.partial.html"
+      ></div>
+      <div
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="global.scroll-top-button.partial.html"
+      ></div>
+
       <div
         data-hx-trigger="load"
         data-hx-swap="outerHTML"
@@ -70,6 +83,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/index.bootstrap.js"></script>
+    <script type="module" src="js/modal.js"></script>
+    <script type="module" src="js/scroll-top-button.js"></script>
 
     <script src="js/contacts.js"></script>
   </body>

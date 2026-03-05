@@ -66,10 +66,17 @@
   --form-text-area-background-color: rgba(255, 255, 255, 0.4);
   --form-text-area-focus-background-color: rgba(255, 255, 255, 0.7);
 
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --modal-bg: #ffffff;
+  --text-color: #333333;
+  --close-btn-color: #888888;
+  --border-radius: 8px;
+
   --transition-speed-buttons: 0.15s;
 }
 
-html, body {
+html,
+body {
   background-color: var(--primary-background-color);
 }
 .nav__logo {

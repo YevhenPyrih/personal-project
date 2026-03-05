@@ -1,0 +1,52 @@
+.floating-cart {
+  position: fixed;
+  top: 5rem; /* Changed this from 'bottom' to 'top' */
+  right: 2rem;
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border: 2px solid #ecdce4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 990;
+  transition:
+    transform 0.2s ease,
+    opacity 0.3s ease;
+
+  &.hidden {
+    display: none;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .floating-cart__icon {
+    width: 32px;
+    height: 32px;
+    color: var(--primary-accent-color, #2b4d4d); /* Dark green icon */
+  }
+
+  .floating-cart__badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ccd0b4; /* Sage green badge background */
+    color: #ffffff; /* Or whatever text color matches your site */
+    font-family:
+      istok web,
+      sans-serif;
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+}

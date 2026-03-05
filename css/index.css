@@ -1,5 +1,8 @@
 @import url("global.css");
 @import url("components.css");
+@import url("modal.css");
+@import url("global.shopping-cart.css");
+@import url("global.scroll-top-button.css");
 @import url("global.header__nav.css");
 @import url("index.header__hero.css");
 @import url("index.about.css");

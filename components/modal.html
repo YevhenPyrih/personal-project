@@ -1,0 +1,123 @@
+<div class="modal-overlay" data-modal-overlay>
+  <div
+    class="modal-content"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    tabindex="-1"
+  >
+    <div class="modal__header">
+      <h2 class="modal__title" id="modal-title">Shopping cart</h2>
+      <button
+        class="modal__close-btn"
+        type="button"
+        aria-label="Close shopping cart"
+        data-modal-close
+      >
+        &times;
+      </button>
+    </div>
+
+    <div id="cart-content">
+      <div class="cart__products-section">
+        <h3 class="cart__section-title">Products</h3>
+        <div class="cart__item">
+          <img src="img/product-sea.webp" alt="Shine Box" class="cart__item-img" />
+          <span class="cart__item-name">Shine Box (FAL)</span>
+          <input type="number" value="0" min="1" class="cart__item-qty" />
+          <span class="cart__item-price">$399,99USD</span>
+
+          <button
+            class="cart__delete-btn"
+            hx-get="/components/cart/empty.html"
+            hx-target="#cart-content"
+            hx-swap="innerHTML"
+            type="button"
+            aria-label="Delete item"
+            data-clear-cart
+          >
+            🗑️
+          </button>
+        </div>
+
+        <div class="cart__summary">
+          <strong class="cart__total">Total: $399,99USD</strong>
+          <a href="#" class="cart__promo-link" aria-expanded="false"
+            >Promo code</a
+          >
+        </div>
+
+        <div class="cart__promo-area" hidden>
+          <textarea
+            id="promo-code"
+            class="cart__promo-input"
+            rows="2"
+            placeholder="Enter your promo code"
+            aria-label="Promo code"
+          ></textarea>
+        </div>
+
+        <p class="cart__promo-status" aria-live="polite" hidden></p>
+      </div>
+
+      <div class="cart__order-section">
+        <h3 class="cart__section-title">Place an order</h3>
+        <form
+          action="https://formspree.io/f/xgonwyoo"
+          method="post"
+          class="cart__form"
+        >
+          <div class="cart__input-group">
+            <label for="modal-name">Name <span class="required">*</span></label>
+            <input
+              name="Name"
+              id="modal-name"
+              type="text"
+              placeholder="Your name"
+              aria-label="Your name"
+              required
+            />
+          </div>
+
+          <div class="cart__input-group">
+            <label for="modal-email">Email <span class="required">*</span></label>
+            <input
+              name="Email"
+              id="modal-email"
+              type="email"
+              placeholder="Your email address"
+              aria-label="Your email address"
+              required
+            />
+          </div>
+
+          <div class="cart__input-group">
+            <label for="modal-phone">Phone <span class="required">*</span></label>
+            <input
+              name="Phone"
+              id="modal-phone"
+              type="tel"
+              placeholder="Your phone number"
+              aria-label="Phone number"
+              required
+            />
+          </div>
+
+          <div class="cart__input-group">
+            <label for="modal-comments">Comments</label>
+            <textarea
+              name="Comments"
+              id="modal-comments"
+              placeholder="Add any additional information on the order here"
+              aria-label="Comments"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="button cart__submit-btn">
+            Order Shine Box
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

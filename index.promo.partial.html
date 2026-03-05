@@ -16,11 +16,17 @@
     <div class="promo__content-container">
       <p class="promo__description">
         Get a set of three Shine cosmetic products for daily use and free
-        testers of our new products!
+        testers of our new products! Use promo code <strong>BeginnerPromo</strong>
+        in the cart for an extra 2% off.
       </p>
     </div>
     <div class="promo__content-container">
-      <button type="button" class="button promo__button">
+      <button
+        type="button"
+        class="button promo__button"
+        hx-get="/components/modal.html"
+        hx-target="#modal-container"
+      >
         Order a Box Now
       </button>
     </div>
