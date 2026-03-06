@@ -1,4 +1,4 @@
-const UNIT_PRICE = 399.99;
+const UNIT_PRICE = 299.99;
 const STORAGE_KEY = "shineBoxQty";
 const ORDER_STORAGE_KEY = "shineLastOrder";
 const ORDER_COUNTER_KEY = "shineLastOrderCounter";
@@ -9,7 +9,7 @@ const PRODUCT_IMAGE = "img/product-sea.webp";
 const PROMO_DISCOUNTS = {
   BeginnerPromo: 0.02,
   SoftServe: 0.2,
-  ShineBoxUltimate: 0.499,
+  ShineBoxUltimate: 0.49,
 };
 
 function getModalContainer() {
